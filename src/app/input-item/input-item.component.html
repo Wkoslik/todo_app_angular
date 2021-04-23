@@ -1,17 +1,47 @@
 <form>
-    <label for="title">Title</label>
+    <label for="title">
+        Title
+    </label>
     <input 
         type="text" 
         name="title" 
         id="title"
         #inputTitle 
         [value]="title"
-        >
-    <label for="description">Description</label>
-    <input type="text" name="description" id="description" #inputDesc [value]="description">
-    <label for="due-date">due-date</label>
-    <input type="date" name="due-date" id="due-date" #inputDueDate [value]="dueDate">
-    <label for="tags">Tags</label>
-    <input type="text" name="tags" id="tags"  #inputTags [value]="tags">
+    >
+
+    <label for="description">
+        Description
+    </label>
+    <input 
+        type="text" 
+        name="description" 
+        id="description" 
+        #inputDesc 
+        [value]="description"
+    >
+
+    <label for="due-date">
+        Due Date
+    </label>
+    <input 
+        type="date" 
+        name="due-date" 
+        id="due-date" 
+        #inputDueDate 
+        [value]="dueDate"
+    >
+
+    <label for="tags">
+        Tags
+    </label>
+    <input 
+        type="text" 
+        name="tags" 
+        id="tags"  
+        #inputTags 
+        [value]="tags"
+    >
+    
     <button (click)="createNewTodo(inputTitle.value, inputDesc.value, inputDueDate.value, inputTags.value)">Save to list</button>
 </form>
