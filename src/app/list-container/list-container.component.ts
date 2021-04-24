@@ -29,7 +29,7 @@ export class ListContainerComponent implements OnInit {
   }
 
   addItem(toDo){
-    this.todoList.push(toDo)
+    this.todoListService.addItem(toDo)
   }
 
 }
