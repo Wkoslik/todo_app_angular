@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { InputItemComponent } from './input-item/input-item.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { ListContainerComponent } from './list-container/list-container.component';
+import { TodoListService } from './services/todo-list.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ListContainerComponent } from './list-container/list-container.componen
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TodoListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
