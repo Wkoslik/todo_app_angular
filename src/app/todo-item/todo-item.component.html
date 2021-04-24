@@ -1,4 +1,11 @@
-{{item.title}}
-{{item.description}}
-{{item.dueDate}}
-{{item.tags}}
+
+
+
+<div class="todo-item">
+    {{item.title}}
+    {{item.description}}
+    {{item.dueDate}}
+    {{item.tags}}
+
+    <button (click)="removeItem()">X</button>
+</div>

@@ -9,7 +9,7 @@ import { TodoListService } from '../services/todo-list.service';
       <app-input-item (submit)="addItem($event)"></app-input-item>  
     <ul>
     <li *ngFor="let item of todoList">
-      <app-todo-item [item]="item"></app-todo-item>
+      <app-todo-item [item]="item" (remove)="removeItem($event)"></app-todo-item>
     </li>
   </ul>
   `,
@@ -32,4 +32,7 @@ export class ListContainerComponent implements OnInit {
     this.todoListService.addItem(toDo)
   }
 
+  removeItem(item): void{
+    this.todoListService.deleteItem(item)
+  }
 }
