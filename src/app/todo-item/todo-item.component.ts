@@ -5,12 +5,7 @@ import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
   selector: 'app-todo-item',
-  template: `
-    {{item.title}}
-    {{item.description}}
-    {{item.dueDate}}
-    {{item.tags}}
-  `,
+  templateUrl: `./todo-item.component.html`,
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
