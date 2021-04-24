@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoItem } from './interfaces/todo-item';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,10 @@ import { Component } from '@angular/core';
     <h1> 
       Welcome to {{ title }}
     </h1>
-    <app-input-item></app-input-item>  
+    <app-input-item (submit)="addItem($event)"></app-input-item>  
     <ul>
       <li *ngFor="let item of todoList">
-        <app-todo-item></app-todo-item>
+        <app-todo-item [item]="item"></app-todo-item>
       </li>
     </ul>
   `,
@@ -17,25 +18,32 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-app';
-  todoList=[
+  todoList: TodoItem[]=[
     {
       title: 'install Nodejs',
       description: 'go to CLI and download node',
       dueDate: '2021-04-28',
-      tags: ['node', 'coding', 'computer']
+      tags: ['node', 'coding', 'computer'],
+      completed: false
     },
     {
-      title: 'install Angjuar',
+      title: 'install Angular',
       description: 'go to CLI and download angular',
       dueDate: '2021-04-28',
-      tags: ['angular', 'coding']
+      tags: ['angular', 'coding'],
+      completed: false
     },
     {
       title: 'install React',
       description: 'go to CLI and download react globally',
       dueDate: '2021-04-28',
-      tags: ['coding', 'react']
+      tags: ['coding', 'react'],
+      completed: false
     },
   ];
+
+  addItem(toDo){
+    this.todoList.push(toDo)
+  }
 
 }
