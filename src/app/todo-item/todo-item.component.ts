@@ -11,6 +11,7 @@ import { TodoItem } from '../interfaces/todo-item';
 export class TodoItemComponent implements OnInit {
   @Input() item: TodoItem;
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>()
+  @Output() update: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
@@ -19,5 +20,12 @@ export class TodoItemComponent implements OnInit {
 
   removeItem(): void{
     this.remove.emit(this.item);
+  }
+
+  complete(): void {
+    this.update.emit({
+      item: this.item,
+      change: {completed: !this.item.completed}
+    })
   }
 }
