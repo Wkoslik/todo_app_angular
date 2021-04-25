@@ -7,13 +7,15 @@ import { InputItemComponent } from './input-item/input-item.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { ListContainerComponent } from './list-container/list-container.component';
 import { TodoListService } from './services/todo-list.service';
+import { SortButtonsComponent } from './sort-buttons/sort-buttons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputItemComponent,
     TodoItemComponent,
-    ListContainerComponent
+    ListContainerComponent,
+    SortButtonsComponent
   ],
   imports: [
     BrowserModule,

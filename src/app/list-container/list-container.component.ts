@@ -7,6 +7,7 @@ import { TodoListService } from '../services/todo-list.service';
   selector: 'app-list-container',
   template: `
       <app-input-item (submit)="addItem($event)"></app-input-item>  
+      <app-sort-buttons></app-sort-buttons>
     <ul>
     <li *ngFor="let item of todoList">
       <app-todo-item 
