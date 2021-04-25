@@ -7,7 +7,7 @@ import { TodoListService } from '../services/todo-list.service';
   selector: 'app-list-container',
   template: `
       <app-input-item (submit)="addItem($event)"></app-input-item>  
-      <app-sort-buttons></app-sort-buttons>
+      <app-sort-buttons (sortAlpha)="sortAlpha()"></app-sort-buttons>
     <ul>
     <li *ngFor="let item of todoList">
       <app-todo-item 
@@ -44,5 +44,9 @@ export class ListContainerComponent implements OnInit {
 
   updateItem(item, change):void {
     this.todoListService.completeItem(item, change)
+  }
+
+  sortAlpha(): void{
+    this.todoListService.sortAlpha()
   }
 }

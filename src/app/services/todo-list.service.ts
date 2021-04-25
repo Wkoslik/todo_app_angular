@@ -44,6 +44,12 @@ export class TodoListService {
     this.saveList()
   }
 
+  sortAlpha(): void {
+    this.todoList.sort((a, b) => { 
+      return a.title.localeCompare(b.title)})
+    this.saveList();
+  }
+
   getList(): TodoItem[]{
     return this.todoList
   }
