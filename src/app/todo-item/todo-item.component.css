@@ -1,3 +1,54 @@
 .todo-complete {
     text-decoration: line-through;
+    font-weight: 100;
+    font-style: italic;
   }
+
+  .todo-item{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  }
+
+  .complete, .delete{
+    width: 25%;
+    text-align: center;
+  }
+
+  .item{
+    width: 75%;
+  }
+
+  .delete-btn{
+    background-color: red;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    transition: 500ms ease-in-out;
+  }
+
+  .delete-btn:hover{
+    cursor: pointer;
+    font-size: 32px;
+    background-color: black;
+    color: red;
+  }
+
+  .todo-item >div >span >p{
+    text-align: left;
+  }
+
+input[type="checkbox"]{
+  width: 40px;
+  height: 40px;
+}
+
+input[type="checkbox"]:hover{
+  cursor: pointer;
+}

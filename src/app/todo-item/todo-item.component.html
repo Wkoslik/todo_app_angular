@@ -1,13 +1,25 @@
 <div class="todo-item">
-    <input type="checkbox" (click)="complete()" [checked]="item.completed"/>
+    <div class="complete">
+        <h3>Complete</h3>
+        <input type="checkbox" (click)="complete()" [checked]="item.completed" class="checkbox"/>
+    </div>
+    <div class="item">
+        <span [ngClass]="{'todo-complete': item.completed}">
+            <h3>
+                {{item.title}}
+            </h3>
+            <p>
+                Description: {{item.description}}
+            </p>
+            <p>
+                Due Date: {{item.dueDate}}
+            </p>
+            <p>Tags: {{item.tags}} </p>
 
-    <span [ngClass]="{'todo-complete': item.completed}">
-    {{item.title}}
-    {{item.description}}
-    {{item.dueDate}}
-    {{item.tags}}
-
-</span>
-
-    <button (click)="removeItem()">X</button>
+        </span>
+    </div>
+    <div class="delete">
+        <h3>Delete</h3>
+        <button (click)="removeItem()" class="btn delete-btn">X</button>
+    </div>
 </div>
