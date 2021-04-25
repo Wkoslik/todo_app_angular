@@ -50,6 +50,21 @@ export class TodoListService {
     this.saveList();
   }
 
+  sortChron(): void{
+    this.todoList.sort((a,b) =>{
+      return a.dueDate.localeCompare(b.dueDate)
+    })
+    this.saveList();
+  }
+
+  dynamicSearch(): void{
+    console.log('✅ search todo list service')
+    // let query = searchValue.toLowerCase()
+    // let filtered = this.todoList.filter(item =>{
+    //   return item.tags.toLowerCase().includes(query)
+    // })
+  }
+
   getList(): TodoItem[]{
     return this.todoList
   }

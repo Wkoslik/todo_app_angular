@@ -1,5 +1,5 @@
 <div>
     <button (click)="sortAlphabetically()">Sort Alphabetically</button>
-    <button>Sort Chronologically</button>
-    <input type="text" value="Type to filter by tag" />
+    <button (click)="sortChronologically()">Sort Chronologically</button>
+    <input type="text" value="Type to filter by tag" (keyup)="search()"/>
 </div>

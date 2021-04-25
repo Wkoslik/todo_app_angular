@@ -7,7 +7,12 @@ import { TodoListService } from '../services/todo-list.service';
   selector: 'app-list-container',
   template: `
       <app-input-item (submit)="addItem($event)"></app-input-item>  
-      <app-sort-buttons (sortAlpha)="sortAlpha()"></app-sort-buttons>
+      <app-sort-buttons 
+        (sortAlpha)="sortAlpha()"
+        (sortChron)="sortChron()"
+        (dynamicSearch)="dynamicSearch()"
+        >
+        </app-sort-buttons>
     <ul>
     <li *ngFor="let item of todoList">
       <app-todo-item 
@@ -48,5 +53,14 @@ export class ListContainerComponent implements OnInit {
 
   sortAlpha(): void{
     this.todoListService.sortAlpha()
+  }
+
+  sortChron(): void{
+    this.todoListService.sortChron()
+  }
+
+  dynamicSearch(): void{
+    console.log('✅ search list container component')
+    this.todoListService.dynamicSearch()
   }
 }
