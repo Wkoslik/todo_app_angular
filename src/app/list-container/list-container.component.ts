@@ -10,25 +10,25 @@ import { TodoListService } from '../services/todo-list.service';
       <app-sort-buttons 
         (sortAlpha)="sortAlpha()"
         (sortChron)="sortChron()"
-        (dynamicSearch)="dynamicSearch()"
         >
         </app-sort-buttons>
-    <ul>
-    <li *ngFor="let item of todoList">
-      <app-todo-item 
-        [item]="item" 
-        (remove)="removeItem($event)"
-        (update)="updateItem($event.item, $event.change)"
-        >
-      </app-todo-item>
-    </li>
-  </ul>
+      <ul>
+        <li *ngFor="let item of todoList">
+          <app-todo-item 
+            [item]="item" 
+            (remove)="removeItem($event)"
+            (update)="updateItem($event.item, $event.change)"
+          >
+          </app-todo-item>
+        </li>
+      </ul>
   `,
   styleUrls: ['./list-container.component.css']
 })
 export class ListContainerComponent implements OnInit {
   todoList: TodoItem[];
   todoListService: TodoListService;
+  searchTerm:string="";
 
 
   constructor(todoListService: TodoListService) { 
@@ -59,8 +59,4 @@ export class ListContainerComponent implements OnInit {
     this.todoListService.sortChron()
   }
 
-  dynamicSearch(): void{
-    console.log('✅ search list container component')
-    this.todoListService.dynamicSearch()
-  }
 }

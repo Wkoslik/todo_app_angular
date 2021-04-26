@@ -6,10 +6,10 @@ const storageKey = 'todo-list'
 
 const defaultList = [
   {
-    title: 'install Nodejs',
-    description: 'go to CLI and download node',
+    title: 'Delete this',
+    description: 'This is a holding list until you put your own information in!',
     dueDate: '2021-04-28',
-    tags: ['node', 'coding', 'computer'],
+    tags: [' node', ' coding', ' computer'],
     completed: false
   }
 ]
@@ -19,14 +19,14 @@ const defaultList = [
 export class TodoListService {
   todoList: TodoItem[]
 
-  constructor(private storage: StorageService) { 
+  constructor(private storage: StorageService) {
     this.todoList = storage.getData(storageKey) || defaultList
   }
 
-  saveList(): void{
+  saveList(): void {
     this.storage.setData(storageKey, this.todoList)
   }
-  
+
   addItem(item: TodoItem): void {
     this.todoList.push(item)
     this.saveList();
@@ -34,40 +34,32 @@ export class TodoListService {
 
   completeItem(item, change): void {
     let index = this.todoList.indexOf(item)
-    this.todoList[index] = {...item, ...change }
+    this.todoList[index] = { ...item, ...change }
     this.saveList()
   }
 
-  deleteItem(item): void{
+  deleteItem(item): void {
     let index = this.todoList.indexOf(item)
     this.todoList.splice(index, 1)
     this.saveList()
   }
 
   sortAlpha(): void {
-    this.todoList.sort((a, b) => { 
-      return a.title.localeCompare(b.title)})
+    this.todoList.sort((a, b) => {
+      return a.title.localeCompare(b.title)
+    })
     this.saveList();
   }
 
-  sortChron(): void{
-    this.todoList.sort((a,b) =>{
+  sortChron(): void {
+    this.todoList.sort((a, b) => {
       return a.dueDate.localeCompare(b.dueDate)
     })
     this.saveList();
   }
 
-  dynamicSearch(): void{
-    console.log('✅ search todo list service')
-    // let query = searchValue.toLowerCase()
-    // let filtered = this.todoList.filter(item =>{
-    //   return item.tags.toLowerCase().includes(query)
-    // })
-  }
-
-  getList(): TodoItem[]{
+  getList(): TodoItem[] {
     return this.todoList
   }
-
 
 }

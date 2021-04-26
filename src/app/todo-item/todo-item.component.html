@@ -12,7 +12,7 @@
                 Description: {{item.description}}
             </p>
             <p>
-                Due Date: {{item.dueDate}}
+                Due Date: {{item.dueDate | date: 'shortDate'}}
             </p>
             <p>Tags: {{item.tags}} </p>
 

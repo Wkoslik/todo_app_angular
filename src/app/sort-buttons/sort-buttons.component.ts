@@ -8,7 +8,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class SortButtonsComponent implements OnInit {
   @Output() sortAlpha: EventEmitter<any> = new EventEmitter<any>();
   @Output() sortChron: EventEmitter<any> = new EventEmitter<any>();
-  @Output() dynamicSearch: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
@@ -21,11 +20,6 @@ export class SortButtonsComponent implements OnInit {
 
   sortChronologically(): void{
     this.sortChron.emit()
-  }
-
-  search(): void{
-    console.log('✅ search sort button component')
-    this.dynamicSearch.emit();
   }
 
 }
