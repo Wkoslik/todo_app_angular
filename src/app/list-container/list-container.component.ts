@@ -13,7 +13,6 @@ export class ListContainerComponent implements OnInit {
   todoListService: TodoListService;
   searchTerm:string="";
 
-
   constructor(todoListService: TodoListService) { 
     this.todoListService = todoListService
   }

@@ -4,15 +4,15 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-  <div class="todo-container">
-  <header>
-    <h1> 
-      {{title}}
-    </h1>
-  </header>
+    <div class="todo-container">
+      <header>
+        <h1> 
+          {{title}}
+        </h1>
+      </header>
 
-    <app-list-container></app-list-container>
-  </div>
+      <app-list-container></app-list-container>
+    </div>
   `,
   styleUrls: ['./app.component.css']
 })

@@ -4,15 +4,7 @@ import { StorageService } from './storage.service'
 
 const storageKey = 'todo-list'
 
-const defaultList = [
-  {
-    title: 'Delete this',
-    description: 'This is a holding list until you put your own information in!',
-    dueDate: '2021-04-28',
-    tags: [' node', ' coding', ' computer'],
-    completed: false
-  }
-]
+const defaultList = []
 
 
 @Injectable()
