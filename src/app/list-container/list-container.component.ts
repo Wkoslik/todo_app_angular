@@ -5,24 +5,7 @@ import { TodoListService } from '../services/todo-list.service';
 
 @Component({
   selector: 'app-list-container',
-  template: `
-      <app-input-item (submit)="addItem($event)"></app-input-item>  
-      <app-sort-buttons 
-        (sortAlpha)="sortAlpha()"
-        (sortChron)="sortChron()"
-        >
-        </app-sort-buttons>
-      <ul>
-        <li *ngFor="let item of todoList">
-          <app-todo-item 
-            [item]="item" 
-            (remove)="removeItem($event)"
-            (update)="updateItem($event.item, $event.change)"
-          >
-          </app-todo-item>
-        </li>
-      </ul>
-  `,
+  templateUrl: './list-container.component.html',
   styleUrls: ['./list-container.component.css']
 })
 export class ListContainerComponent implements OnInit {
